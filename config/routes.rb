@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   get 'pets', to: 'pets#index', as: 'pets'
+
+  get 'pets/:id', to: "pets#show", as: 'pet'
+
+
+
+
+  # resources :pets to check what the restful routes could look like. so instead of show_pets it would be pet.
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
