@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   get 'pets', to: 'pets#index', as: 'pets'
 
-  get 'pets/:id', to: "pets#show", as: 'pet'
+  # http://localhost:3000/pets/search?query=
+  get 'pets/search', to: "pets#search", as: 'pets_search'
 
+
+
+  get 'pets/:id', to: "pets#show", as: 'pet'
+#
+
+# why is not this...
+#get 'pets/search/:query' => 'pets#search'
 
 
 

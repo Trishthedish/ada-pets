@@ -19,4 +19,18 @@ class PetsController < ApplicationController
     end
   end
 
+
+
+# http://localhost:3000/pets/search?query=Horsetooth
+  def search
+    pets = Pet.where(name: params[:query])
+    unless pets.empty?
+      render :json => pets.as_json(except: [:created_at, :updated_at]), :status => :ok
+    else
+      render :json => [], :status => :no_content
+    end
+
+  end
+
+
 end

@@ -72,6 +72,7 @@ class PetsControllerTest < ActionController::TestCase
   test "show page for pet response with no_content" do
     get :show, id: 5
     assert_response :no_content
+  end
 
 
 
