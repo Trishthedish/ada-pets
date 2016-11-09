@@ -27,6 +27,7 @@ class PetsController < ApplicationController
 
     # find_by you're only getting one thing.if you go into your console. You'll see that once you are looking for potentialy several pets named peanut. You will want to use where.
     pets = Pet.where(name: params[:query])
+    raise
     unless pets.empty?
       render :json => pets.as_json(except: [:created_at, :updated_at]), :status => :ok
     else
